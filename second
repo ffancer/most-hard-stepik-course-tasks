@@ -1,0 +1,40 @@
+"""
+Вводишь 3 числа и получаешь следующий вывод:
+наибольшее число
+наименьшее
+среднее
+Работает с одинаковыми цифрами
+"""
+
+a = int(input())
+b = int(input())
+c = int(input())
+
+if a != b and b != c and a != c:
+    if b < a > c and b > c:
+        print(str(a) + '\n' + str(c) + '\n' + str(b))
+    elif b < a > c and b < c:
+        print(str(a) + '\n' + str(b) + '\n' + str(c))
+    elif a < b > c and a > c:
+        print(str(b) + '\n' + str(c) + '\n' + str(a))
+    elif a < b > c and a < c:
+        print(str(b) + '\n' + str(a) + '\n' + str(c))
+    elif a < c > b and a > b:
+        print(str(c) + '\n' + str(b) + '\n' + str(a))
+    elif a < c > b and a < b:
+        print(str(c) + '\n' + str(a) + '\n' + str(b))
+elif a == b and b == c and c == a:
+    print(str(a) + '\n' + str(b) + '\n' + str(c))
+elif a == b or a == c or b == c:
+    if a == b > c:
+        print(str(a) + '\n' + str(c) + '\n' + str(b))
+    elif a == b < c:
+        print(str(c) + '\n' + str(a) + '\n' + str(b))
+    elif b == c > a:
+        print(str(c) + '\n' + str(a) + '\n' + str(b))
+    elif b == c < a:
+        print(str(a) + '\n' + str(c) + '\n' + str(b))
+    elif a == c > b:
+        print(str(a) + '\n' + str(b) + '\n' + str(c))
+    elif a == c < b:
+        print(str(b) + '\n' + str(c) + '\n' + str(a))
