@@ -1,0 +1,34 @@
+УЗНАТЬ ЯВЛЯЕТСЯ ЛИ СЛОВО ПАЛИНДРОМОМ
+ДА, МОЖНО ВЗЯТЬ СРЕЗЫ И СРАВНИТЬ [::-1], НО Н АЭТО ТРАТТИСЯ БОЛЬШЕ ПАМЯТИ, ДА И НЕ ТАК ИНТЕРЕСНО КАК ПУТИ РЕШЕНИЯ НИЖЕ
+
+
+НАМБА 1 =====================
+a = input()
+i = 0
+j = len(a) - 1
+is_palindrome = True
+while i < j:
+    if a[i] != a[j]:
+        is_palindrome = False
+    i += 1
+    j -= 1
+if is_palindrome:
+    print("it's palindrome")
+else:
+    print('no')
+    
+    
+    
+НАМБА 2 =====================
+a = input()
+i = 0
+j = len(a) - 1
+while i < j:
+    if a[i] != a[j]:
+        print("no")
+        break
+    else:
+        i += 1
+        j -= 1
+    print("it's palindrome")
+    break
