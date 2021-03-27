@@ -1,0 +1,41 @@
+import random
+
+while True:
+
+    def is_valid(user_num):
+        return (user_num.isdigit() == True) and (100 >= int(user_num) >= 1)
+
+    def diapozone(n):
+        return len(n) == 2
+
+    print('Добро пожаловать в числовую угадайку')
+
+    n = [int(i) for i in input(
+        'Введите диапазон нашей игры через пробел (например от 1 до 150): ').split()]
+    num = random.randint(n[0], n[1])
+    cnt = 0
+
+    while True:
+        user_num = input('Введите число: ')
+        cnt += 1
+
+        if is_valid(user_num) == False:
+            user_num = input(
+                'А может быть все-таки введем целое число от 1 до 100?')
+
+        if is_valid(user_num) == True:
+            if int(user_num) < num:
+                print('Ваше число меньше загаданного, попробуйте еще разок')
+            elif int(user_num) > num:
+                print('Ваше число больше загаданного, попробуйте еще разок')
+            elif num == int(user_num):
+                print('Вы угадали, поздравляем!')
+                break
+
+    print('Число ваших попыток -', cnt)
+
+    question = input('Хотите продолжить играть? да/нет: ')
+    if question in ['нет', 'no', 'n', 'н', 1]:
+        break
+
+print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
