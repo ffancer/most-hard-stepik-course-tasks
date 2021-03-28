@@ -1,0 +1,40 @@
+import random
+
+digits = '0123456789'
+lowercase_letters = 'abcdefghijklmnopqrstuvwxyz'
+uppercase_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+punctuation = '!#$%&*+-=?@^_'
+chars = ''
+
+pswrd_quantity = int(input('Количество паролей для генерации: '))
+pswrd_len = int(input('Длина одного пароля: '))
+pswrd_digits = input('Включать ли цифры 0123456789? (y/n): ')
+pswrd_lwr_ltrs = input(
+    'Включать ли прописные буквы ABCDEFGHIJKLMNOPQRSTUVWXYZ? (y/n): ')
+pswrd_upper_ltrs = input(
+    'Включать ли строчные буквы abcdefghijklmnopqrstuvwxyz? (y/n): ')
+pswrd_punctuation = input('Включать ли символы !#$%&*+-=?@^_? (y/n): ')
+pswrd_exception = input('Исключать ли неоднозначные символы il1Lo0O? (y/n): ')
+
+if pswrd_digits in ['y', 'yes']:
+    chars += digits
+if pswrd_lwr_ltrs in ['y', 'yes']:
+    chars += lowercase_letters
+if pswrd_upper_ltrs in ['y', 'yes']:
+    chars += uppercase_letters
+if pswrd_punctuation in ['y', 'yes']:
+    chars += punctuation
+if pswrd_exception in ['y', 'yes']:
+    for i in '01b':
+        chars = chars.replace(i, '')
+
+
+def generate_password(pswrd_len, chars):
+    final_password = ''
+    for _ in range(pswrd_len):
+        final_password += random.choice(chars)
+    return final_password
+
+
+for i in range(pswrd_quantity):
+    print(generate_password(pswrd_len, chars))
